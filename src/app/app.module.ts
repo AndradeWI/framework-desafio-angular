@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostsComponent } from './modules/posts/posts.component';
 import { AlbumsComponent } from './modules/albums/albums.component';
 import { TodosComponent } from './modules/todos/todos.component';
+
 @NgModule({
   declarations: [
     AppComponent,
