@@ -1,7 +1,9 @@
-import { Posts } from './../../core/interfaces/posts.interface';
 import { Component, OnInit } from '@angular/core';
 
+import { take, map } from 'rxjs/operators';
+
 import { PostsService } from './service/posts.service';
+import { Posts } from './../../core/interfaces/posts.interface';
 
 @Component({
   selector: 'app-posts',
@@ -19,12 +21,12 @@ export class PostsComponent implements OnInit {
   }
 
   public getTodos(): void {
-    this.postsService.getPosts()
-    .subscribe(
-      (res: Array<Posts>) => {
-             this.posts = res;
-      }
-    );
+    this.postsService.getPosts().pipe(
+      take(1),
+      map((res: Array<Posts>) => {
+        this.posts = res;
+      })
+    )
+    .subscribe();
   }
-
 }

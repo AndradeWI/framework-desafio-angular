@@ -10,7 +10,7 @@ import { environment } from './../../../../environments/environment';
 })
 export class AlbunsService {
 
-  private readonly API = `${environment.API}albuns`;
+  private readonly API = `${environment.API}albums`;
 
   constructor(private http: HttpClient) { }
 

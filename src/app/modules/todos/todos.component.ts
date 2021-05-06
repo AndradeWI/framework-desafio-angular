@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 import { TodosService } from './service/todos.service';
+import { take, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todos',
@@ -22,18 +23,23 @@ export class TodosComponent implements OnInit {
   }
 
   public getTodos(): void {
-    this.todoService.getTodos()
-    .subscribe(
-      (res: Array<Todos>) => {
-         res.map((todo: Todos) => {
-           if (todo.completed) {
-             this.todosDone.push(todo);
-           } else {
-             this.todosToDo.push(todo);
-           }
-         })
+    this.todoService.getTodos().pipe(
+      take(1),
+      map((res: Array<Todos>) => {
+        this.setTodos(res);
+      })
+    )
+    .subscribe();
+  }
+
+  public setTodos(res: Array<Todos>) {
+    res.map((todo: Todos) => {
+      if (todo.completed) {
+        this.todosDone.push(todo);
+      } else {
+        this.todosToDo.push(todo);
       }
-    );
+    })
   }
 
  public drop(event: CdkDragDrop<string[]>) {

@@ -2,6 +2,7 @@
   max-height: 85%;
   overflow-y: scroll;
   background-color: #F0FFFF;
+  text-align: center;
 }
 
 .title-page {
@@ -14,6 +15,7 @@
     display: inline-flex; 
     align-items: center;
     margin: 20px 20px 20px 20px;
+    text-align: left;
 }
 
 .posts-card {
