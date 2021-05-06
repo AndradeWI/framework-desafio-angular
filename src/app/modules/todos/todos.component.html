@@ -7,7 +7,7 @@
         [cdkDropListData]="todosToDo"
         class="todo-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="todo-box" *ngFor="let item of todosToDo" cdkDrag>{{item.title}}</div>
+        <div class="todo-box" *ngFor="let todo of todosToDo" cdkDrag>{{todo.title}}</div>
       </div>
     </div>
   
@@ -19,7 +19,7 @@
         [cdkDropListData]="todosDone"
         class="todo-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="todo-box" *ngFor="let item of todosDone" cdkDrag>{{item.title}}</div>
+        <div class="todo-box" *ngFor="let todo of todosDone" cdkDrag>{{todo.title}}</div>
       </div>
     </div>
   </div>

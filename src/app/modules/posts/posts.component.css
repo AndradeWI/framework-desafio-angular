@@ -1,0 +1,49 @@
+.posts-page {
+  max-height: 85%;
+  overflow-y: scroll;
+  background-color: #F0FFFF;
+}
+
+.title-page {
+  color: blue; 
+  background-color: #F0FFFF;
+  padding: 10px 10px 10px 20px;
+}
+
+.posts-container {
+    display: inline-flex; 
+    align-items: center;
+    margin: 20px 20px 20px 20px;
+}
+
+.posts-card {
+    max-width: 280px;
+    margin-right: 10px;
+  }
+  
+  .posts-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+   /* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
