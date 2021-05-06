@@ -5,18 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MenuModule } from './core/components/menu/menu.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { AlbumsComponent } from './modules/albums/albums.component';
-import { TodosComponent } from './modules/todos/todos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     AlbumsComponent,
-    TodosComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +23,8 @@ import { TodosComponent } from './modules/todos/todos.component';
     RouterModule,
     AppRoutingModule,
     RouterModule,
+    BrowserAnimationsModule,
     MenuModule,
-    BrowserAnimationsModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

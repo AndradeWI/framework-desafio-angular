@@ -1,11 +1,13 @@
-import { MenuComponent } from './core/components/menu/menu.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
+
   {
-    path: '',
-    component: MenuComponent
+    path: 'todos',
+    loadChildren: () =>
+    import('./modules/todos/todos.module')
+    .then((m) => m.TodosModule)
   }
 ];
 

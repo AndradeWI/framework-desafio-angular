@@ -1,1 +1,25 @@
-<p>todos works!</p>
+<div class="page-todo" cdkDropListGroup>
+    <div class="todo-container">
+      <h2><span matBadge="{{todosToDo.length}}" matBadgeOverlap="false">To do</span></h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todosToDo"
+        class="todo-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="todo-box" *ngFor="let item of todosToDo" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+  
+    <div class="todo-container">
+      <h2><span matBadge="{{todosDone.length}}" matBadgeOverlap="false">Done</span></h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todosDone"
+        class="todo-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="todo-box" *ngFor="let item of todosDone" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+  </div>
