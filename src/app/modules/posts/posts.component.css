@@ -19,14 +19,14 @@
 }
 
 .posts-card {
-    max-width: 280px;
+    max-width: 470px;
     margin-right: 10px;
   }
   
-  .posts-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+.posts-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
 
    /* width */
 ::-webkit-scrollbar {

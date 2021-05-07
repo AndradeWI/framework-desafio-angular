@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TodosRoutingModule } from './todos-routing.module';
 import { TodosComponent } from './todos.component';
@@ -15,7 +16,8 @@ import { TodosComponent } from './todos.component';
     CommonModule,
     TodosRoutingModule,
     MatBadgeModule,
-    DragDropModule
+    DragDropModule,
+    MatIconModule
   ],
   exports: [TodosComponent]
 })

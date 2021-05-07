@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { take, map } from 'rxjs/operators';
 
-import { PostsService } from './service/posts.service';
+import { User } from './../../core/interfaces/users.interface';
 import { Posts } from './../../core/interfaces/posts.interface';
+import { UsersService } from './../../shared/service/users.service';
+import { PostsService } from './service/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -13,10 +15,12 @@ import { Posts } from './../../core/interfaces/posts.interface';
 export class PostsComponent implements OnInit {
 
   public posts: Array<Posts> = [];
+  public users: Array<User> = [];
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService, private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.getUsers();
     this.getTodos();
   }
 
@@ -29,4 +33,20 @@ export class PostsComponent implements OnInit {
     )
     .subscribe();
   }
+
+  public getUsers(): void {
+    this.usersService.getUsers().pipe(
+      take(1),
+      map((res: Array<User>) => {
+        this.users = res;
+      })
+    )
+    .subscribe();
+  }
+
+  public getUserName(id: number): string {
+    const user: Array<User> = this.users.filter((user: User) => user.id === id);
+    return user[0].name;
+  }
+
 }

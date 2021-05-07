@@ -19,7 +19,9 @@
         [cdkDropListData]="todosDone"
         class="todo-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="todo-box" *ngFor="let todo of todosDone" cdkDrag>{{todo.title}}</div>
+        <div class="todo-box" *ngFor="let todo of todosDone" cdkDrag>
+          {{todo.title}}<mat-icon aria-hidden="false" aria-label="Todo Done"> check </mat-icon>
+        </div>
       </div>
     </div>
   </div>

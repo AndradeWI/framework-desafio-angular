@@ -19,11 +19,11 @@ export class BaseService <T> {
     return this.http.get(`${this.API_URL}/${id}`);
    }
 
-  public postPut = (record: T, method: string): Observable<any> => {
+  public postPut = (data: T, method: string): Observable<any> => {
     if (MethodsEnum.PUT === method) {
-        return this.http.put(`${this.API_URL}`, record);
+        return this.http.put(`${this.API_URL}`, data);
     }
-    return this.http.post(`${this.API_URL}`, record);
+    return this.http.post(`${this.API_URL}`, data);
   }
 
   public get = (): Observable<any> => {

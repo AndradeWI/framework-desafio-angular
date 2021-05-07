@@ -5,15 +5,10 @@
         <mat-card class="albuns-card">
             <mat-card-header>
             <div mat-card-avatar class="albuns-header-image"></div>
-            <mat-card-title>{{ albun.id }}</mat-card-title>
-            <mat-card-subtitle>{{ albun.title }}</mat-card-subtitle>
+            <mat-card-title>{{ albun.title }}</mat-card-title>
+            <mat-card-subtitle>User: {{ getUserName(albun.userId) }}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-            <p>
-                {{ albun.title }}
-            </p>
-            </mat-card-content>
             <mat-card-actions>
             <button mat-button>LIKE</button>
             <button mat-button>SHARE</button>

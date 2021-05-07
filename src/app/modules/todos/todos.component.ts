@@ -15,6 +15,7 @@ export class TodosComponent implements OnInit {
 
   public todosToDo: Array<Todos> = [];
   public todosDone:  Array<Todos> = [];
+  public panelOpenState: boolean = false;
 
   constructor( private todoService: TodosService) { }
 
