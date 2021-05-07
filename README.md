@@ -46,7 +46,7 @@ Utilizar Angular 9 junto com Angular Material (https://material.angular.io/) par
 ### Executar aplicação
 
 ```
-npm instal
+npm install
 npm start
 ```
 Acessar: http://localhost:4200/
