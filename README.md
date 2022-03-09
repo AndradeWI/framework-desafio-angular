@@ -1,6 +1,6 @@
 # Framework desafio Angular
 
-### Cenário 
+### Cenário
 Construa uma aplicação Web que irá utilizar as listagens de uma API Rest.
 
 Esta aplicação deve conter os menus e/ou páginas:
